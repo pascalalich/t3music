@@ -5,12 +5,20 @@
 		<f:flashMessages />
 	
 		<f:for each="{albums}" as="album">
-			<div>
-				<f:link.action action="show" arguments="{album : album}">
-					<f:if condition="{album.image}"><f:image src="{album.image}" width="120" alt="Album '{album.title}'" class="album-image" /></f:if>
-					<span class="album-title">{album.title}</span>
-					<f:if condition="{album.year}"><span class="album-year"> ({album.year})</span></f:if>
-				</f:link.action>
+			<div class="album">
+				<div class="album-image-container">
+					<f:link.action action="show" arguments="{album : album}">
+						<f:if condition="{album.image}">
+							<f:image src="uploads/tx_t3music/{album.image}" width="120" alt="Album '{album.title}'" class="album-image" />
+						</f:if>
+					</f:link.action>
+				</div>
+				<div class="album-text-container">
+					<f:link.action action="show" arguments="{album : album}">
+						<span class="album-title">{album.title}</span>
+						<f:if condition="{album.year}"><span class="album-year"> ({album.year})</span></f:if>
+					</f:link.action>
+				</div>
 			</div>
 		</f:for>
 	</div>
