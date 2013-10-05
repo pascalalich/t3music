@@ -16,13 +16,19 @@ plugin.tx_t3music {
 plugin.tx_t3music._CSS_DEFAULT_STYLE (
 	.tx-t3music .albums .album {
 		float: left;
+		min-height: 215px;
+	}
+	.tx-t3music .albums .album .album-image-container {
 		padding-right: 20px;
+		padding-bottom: 5px;
+	}
+	.tx-t3music .albums .album .album-text-container {
 		width: 150px;
 	}
 	.tx-t3music .album-detail .album-image {
 		float: left;
-		padding-right:20px;
-		padding-bottom:20px;
+		margin-right:20px;
+		margin-bottom:20px;
 	}
 	.tx-t3music .album-detail .label {
 		font-weight: bold;
