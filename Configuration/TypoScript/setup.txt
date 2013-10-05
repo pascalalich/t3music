@@ -14,9 +14,9 @@ plugin.tx_t3music {
 }
 
 plugin.tx_t3music._CSS_DEFAULT_STYLE (
-	.tx_t3music_albums .album {
+	.tx-t3music .albums .album {
 		float: left;
 		padding-right: 20px;
-		width: 120px;
+		width: 150px;
 	}
 )
