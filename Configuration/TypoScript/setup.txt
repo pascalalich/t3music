@@ -1,0 +1,39 @@
+plugin.tx_t3music {
+	view {
+		templateRootPath = {$plugin.tx_t3music.view.templateRootPath}
+		partialRootPath = {$plugin.tx_t3music.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_t3music.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_t3music.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_t3music._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-t3music table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-t3music table th {
+		font-weight:bold;
+	}
+
+	.tx-t3music table td {
+		vertical-align:top;
+	}
+)

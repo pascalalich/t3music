@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-10-05T19:51:43Z" product-name="t3music">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_t3music_domain_model_album">
+				<source>Album</source>
+			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_album.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_album.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_album.year">
+				<source>Year</source>
+			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_album.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_album.tracks">
+				<source>Tracks</source>
+			</trans-unit>
+
+			<trans-unit id="tx_t3music_domain_model_track">
+				<source>Track</source>
+			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_track.number">
+				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_track.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_track.length">
+				<source>Length</source>
+			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_track.full_file">
+				<source>Full File</source>
+			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_track.sample_file">
+				<source>Sample File</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

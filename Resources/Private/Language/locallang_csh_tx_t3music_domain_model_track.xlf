@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-10-05T19:51:43Z" product-name="t3music">
+		<header/>
+		<body>
+
+			<trans-unit id="number.description">
+				<source>number</source>
+			</trans-unit>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="length.description">
+				<source>Track length in format minutes:seconds</source>
+			</trans-unit>
+			<trans-unit id="full_file.description">
+				<source>Song in full length</source>
+			</trans-unit>
+			<trans-unit id="sample_file.description">
+				<source>Song in sample length</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
