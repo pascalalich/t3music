@@ -7,7 +7,7 @@
 				<div class="album-image-container">
 					<f:link.action action="show" arguments="{album : album}">
 						<f:if condition="{album.image}">
-							<f:image src="uploads/tx_t3music/{album.image}" width="150" alt="Album '{album.title}'" class="album-image" />
+							<f:image src="{album.image}" width="150" alt="Album '{album.title}'" class="album-image" />
 						</f:if>
 					</f:link.action>
 				</div>

@@ -5,7 +5,7 @@
 	<h1>Album "{album.title}"</h1>
 	<div class="album-detail-header">
 		<f:if condition="{album.image}">
-			<f:image src="uploads/tx_t3music/{album.image}" width="200" alt="Album '{album.title}'" class="album-image" />
+			<f:image src="{album.image}" width="200" alt="Album '{album.title}'" class="album-image" />
 		</f:if>
 	
 		<f:if condition="{album.year}">
