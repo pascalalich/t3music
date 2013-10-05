@@ -140,7 +140,7 @@ $TCA['tx_t3music_domain_model_album'] = array(
 				'internal_type' => 'file',
 				'uploadfolder' => 'uploads/tx_t3music',
 				'show_thumbs' => 1,
-				'size' => 5,
+				'size' => 1,
 				'allowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
 				'disallowed' => '',
 			),

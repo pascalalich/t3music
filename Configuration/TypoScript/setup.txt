@@ -19,4 +19,31 @@ plugin.tx_t3music._CSS_DEFAULT_STYLE (
 		padding-right: 20px;
 		width: 150px;
 	}
+	.tx-t3music .album-detail .album-image {
+		float: left;
+		padding-right:20px;
+		padding-bottom:20px;
+	}
+	.tx-t3music .album-detail .label {
+		font-weight: bold;
+		float: left;
+	}
+	.tx-t3music .album-detail-prices {
+		clear: both;
+	}
+	
+	.tx-t3music .album-price-cd-container {
+		float: left;
+		padding-right: 30px;
+	}
+	.tx-t3music .album-detail-tracks-table {
+		
+	}
+	.tx-t3music .album-detail-tracks-table th, .tx-t3music .album-detail-tracks-table td {
+		padding: 5px;
+		border-bottom: 1px solid grey;
+	}
+	.tx-t3music .album-detail-tracks-table th {
+		font-weight: bold;
+	}
 )

@@ -1,21 +1,57 @@
 <f:layout name="Default" />
 
-This Template is responsible for displaying a single view for a domain object
-
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-  Resources:
-    Private:
-      Templates:
-        Show.html: keep
-
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
-
 <f:section name="main">
-<h1>Single View for Album</h1>
-
-<f:flashMessages />
-<f:render partial="Album/Properties" arguments="{album:album}" />
-<f:link.action action="list">Back to list</f:link.action><br />
-<f:link.action action="new">New Album</f:link.action>
+<div class="album-detail">
+	<h1>Album "{album.title}"</h1>
+	<div class="album-detail-header">
+		<f:if condition="{album.image}">
+			<f:image src="uploads/tx_t3music/{album.image}" width="200" alt="Album '{album.title}'" class="album-image" />
+		</f:if>
+	
+		<f:if condition="{album.year}">
+			<p class="album-year-container">
+				<span class="label"><f:translate key="tx_t3music_domain_model_album.year" />:&nbsp;</span><span class="album-year">{album.year}</span>
+			</p>
+		</f:if>
+	
+		<p class="album-description">
+			<f:format.html>{album.description}</f:format.html>
+		</p>
+	</div>
+	<div class="album-detail-prices">
+		<p class="album-price-cd-container">
+			<span class="label"><f:translate key="tx_t3music_domain_model_album.price.cd" />:&nbsp;</span><span class="album-price-cd">16,40 &euro;&nbsp;<f:translate key="tx_t3music_domain_model_album.taxes" /></span>
+		</p>
+		<p class="album-price-mp3-container">
+			<span class="label"><f:translate key="tx_t3music_domain_model_album.price.mp3" />:&nbsp;</span><span class="album-price-mp3">10,90 &euro;&nbsp;<f:translate key="tx_t3music_domain_model_album.taxes" /></span>
+		</p>
+	</div>
+	<div class="album-detail-tracks">
+		<h2><f:translate key="tx_t3music_domain_model_album.tracks" /></h2>
+		<table class="album-detail-tracks-table">
+			<tr>
+				<th>&nbsp;</th>
+				<th><f:translate key="tx_t3music_domain_model_track.title" /></th>
+				<th><f:translate key="tx_t3music_domain_model_track.length" /></th>
+				<th><f:translate key="tx_t3music_domain_model_track.price" /></th>
+				<th>&nbsp;</th>
+			</tr>
+			<f:for each="{album.tracks}" as="track">
+			<tr>
+				<td>
+					<f:if condition="{track.sampleFile}">
+						<a href="{track.sampleFile}" target="track-sample-player">
+							<f:image src="typo3conf/ext/t3music/Resources/Private/Icons/play.png" width="32" alt="Play sample '{track.title}'" class="track-sampler" />
+						</a>
+					</f:if>
+				</td>			
+				<td>{track.number}&nbsp;{track.title}</td>			
+				<td>{track.length}</td>			
+				<td>1,10 &euro;</td>			
+				<td></td>			
+			</tr>
+			</f:for>
+		</table>
+	</div>
+</div>
 </f:section>
