@@ -52,6 +52,9 @@
 			<trans-unit id="tx_t3music_domain_model_track.price">
 				<source>Price</source>
 			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_track.playSample">
+				<source>Play sample</source>
+			</trans-unit>
 			
 		</body>
 	</file>

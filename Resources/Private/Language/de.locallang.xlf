@@ -68,6 +68,10 @@
 				<source>Price</source>
 				<target>Preis</target>
 			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_track.playSample">
+				<source>Play sample</source>
+				<target>Songausschnitt abspielen</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
