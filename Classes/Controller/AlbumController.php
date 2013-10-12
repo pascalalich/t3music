@@ -58,9 +58,12 @@ class AlbumController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * @param \TYPO3\T3music\Domain\Model\Album $album
 	 * @return void
 	 */
-	public function showAction(\TYPO3\T3music\Domain\Model\Album $album) {
+	public function showAction(\TYPO3\T3music\Domain\Model\Album $album = NULL) {
+		if ($album == NULL) {
+			$albumId = intval($this->settings['showSingleAlbumUid']);
+			$album = $this->albumRepository->findByUid($albumId);
+		}
 		$this->view->assign('album', $album);
 	}
-
 }
 ?>

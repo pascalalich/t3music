@@ -11,6 +11,12 @@ if (!defined('TYPO3_MODE')) {
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Music');
 
+// FlexForm
+$pluginSignature = $_EXTKEY . '_albums';
+$TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+$TCA['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'select_key';
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:'.$_EXTKEY.'/Configuration/FlexForms/setup.xml');
+
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_t3music_domain_model_album', 'EXT:t3music/Resources/Private/Language/locallang_csh_tx_t3music_domain_model_album.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_t3music_domain_model_album');
 $TCA['tx_t3music_domain_model_album'] = array(
