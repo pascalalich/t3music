@@ -11,6 +11,11 @@ plugin.tx_t3music {
 		# uncomment the following line to enable the new Property Mapper.
 		# rewrittenPropertyMapper = 1
 	}
+	settings {
+		album.cd.price = 16,40
+		album.mp3.price = 10,90
+		track.mp3.price = 1,10
+	}
 }
 
 plugin.tx_t3music._CSS_DEFAULT_STYLE (

@@ -19,12 +19,16 @@
 		</p>
 	</div>
 	<div class="album-detail-prices">
-		<p class="album-price-cd-container">
-			<span class="label"><f:translate key="tx_t3music_domain_model_album.price.cd" />:&nbsp;</span><span class="album-price-cd">16,40 &euro;&nbsp;<f:translate key="tx_t3music_domain_model_album.taxes" /></span>
-		</p>
-		<p class="album-price-mp3-container">
-			<span class="label"><f:translate key="tx_t3music_domain_model_album.price.mp3" />:&nbsp;</span><span class="album-price-mp3">10,90 &euro;&nbsp;<f:translate key="tx_t3music_domain_model_album.taxes" /></span>
-		</p>
+		<f:if condition="{settings.album.cd.price}">
+			<p class="album-price-cd-container">
+				<span class="label"><f:translate key="tx_t3music_domain_model_album.price.cd" />:&nbsp;</span><span class="album-price-cd">{settings.album.cd.price}&nbsp;&euro; <f:translate key="tx_t3music_domain_model_album.taxes" /></span>
+			</p>
+		</f:if>
+		<f:if condition="{settings.album.mp3.price}">
+			<p class="album-price-mp3-container">
+				<span class="label"><f:translate key="tx_t3music_domain_model_album.price.mp3" />:&nbsp;</span><span class="album-price-mp3">{settings.album.mp3.price}&nbsp;&euro; <f:translate key="tx_t3music_domain_model_album.taxes" /></span>
+			</p>
+		</f:if>
 	</div>
 	<div class="album-detail-tracks">
 		<h2><f:translate key="tx_t3music_domain_model_album.tracks" /></h2>
@@ -33,8 +37,10 @@
 				<th>&nbsp;</th>
 				<th><f:translate key="tx_t3music_domain_model_track.title" /></th>
 				<th><f:translate key="tx_t3music_domain_model_track.length" /></th>
-				<th><f:translate key="tx_t3music_domain_model_track.price" /></th>
-				<th>&nbsp;</th>
+				<f:if condition="{settings.track.mp3.price}">
+					<th><f:translate key="tx_t3music_domain_model_track.price" /></th>
+					<th>&nbsp;</th>
+				</f:if>
 			</tr>
 			<f:for each="{album.tracks}" as="track">
 			<tr>
@@ -47,8 +53,10 @@
 				</td>			
 				<td>{track.number}&nbsp;{track.title}</td>			
 				<td>{track.length}</td>			
-				<td>1,10&nbsp;&euro;</td>			
-				<td></td>			
+				<f:if condition="{settings.track.mp3.price}">
+					<td>{settings.track.mp3.price}&nbsp;&euro;</td>			
+					<td></td>			
+				</f:if>
 			</tr>
 			</f:for>
 		</table>
