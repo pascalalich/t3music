@@ -2,10 +2,10 @@
 
 <f:section name="main">
 <div class="album-detail">
-	<h1>Album "{album.title}"</h1>
+	<h1><f:translate key="tx_t3music_domain_model_album" arguments="{1: album.title}" /></h1>
 	<div class="album-detail-header">
 		<f:if condition="{album.image}">
-			<f:image src="{album.image}" width="200" alt="Album '{album.title}'" class="album-image" />
+			<f:image src="{album.image}" width="200" alt="{f:translate(key:'tx_t3music_domain_model_album', arguments: {1: album.title})}" class="album-image" />
 		</f:if>
 	
 		<f:if condition="{album.year}">

@@ -4,8 +4,8 @@
 		<header/>
 		<body>
 			<trans-unit id="tx_t3music_domain_model_album">
-				<source>Album</source>
-				<target>Album</target>
+				<source>Album "%1$s"</source>
+				<target>Album "%1$s"</target>
 			</trans-unit>
 			<trans-unit id="tx_t3music_domain_model_album.title">
 				<source>title</source>
