@@ -6,6 +6,9 @@
 			<trans-unit id="tx_t3music_domain_model_album">
 				<source>Album "%1$s"</source>
 			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_albums">
+				<source>Albums</source>
+			</trans-unit>
 			<trans-unit id="tx_t3music_domain_model_album.title">
 				<source>title</source>
 			</trans-unit>
