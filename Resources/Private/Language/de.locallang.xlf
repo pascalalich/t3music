@@ -9,7 +9,7 @@
 			</trans-unit>
 			<trans-unit id="tx_t3music_domain_model_albums">
 				<source>Albums</source>
-				<source>Alben</source>
+				<target>Alben</target>
 			</trans-unit>
 			<trans-unit id="tx_t3music_domain_model_album.title">
 				<source>title</source>
