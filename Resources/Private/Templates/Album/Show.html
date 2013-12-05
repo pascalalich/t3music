@@ -22,6 +22,10 @@
 		<f:if condition="{settings.album.cd.price}">
 			<p class="album-price-cd-container">
 				<span class="label"><f:translate key="tx_t3music_domain_model_album.price.cd" />:&nbsp;</span><span class="album-price-cd">{settings.album.cd.price}&nbsp;&euro; <f:translate key="tx_t3music_domain_model_album.taxes" /></span>
+				<br />				
+				<f:form name="buyCD" method="post" controller="Album" action="buyCd" arguments="{album : album}">
+					<f:form.submit value="Buy CD" />
+				</f:form> 
 			</p>
 		</f:if>
 		<f:if condition="{settings.album.mp3.price}">

@@ -7,12 +7,12 @@ if (!defined('TYPO3_MODE')) {
 	'TYPO3.' . $_EXTKEY,
 	'Albums',
 	array(
-		'Album' => 'list, show',
+		'Album' => 'list, show, buyCd',
 		
 	),
 	// non-cacheable actions
 	array(
-		'Album' => '',
+		'Album' => 'buyCd',
 		
 	)
 );

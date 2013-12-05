@@ -34,6 +34,13 @@ namespace TYPO3\T3music\Controller;
  */
 class AlbumController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
+	protected $logger;
+	
+	
+	function __construct() {
+		$this->logger = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Log\\LogManager')->getLogger(__CLASS__);
+	}
+	
 	/**
 	 * albumRepository
 	 *
@@ -64,6 +71,16 @@ class AlbumController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 			$album = $this->albumRepository->findByUid($albumId);
 		}
 		$this->view->assign('album', $album);
+	}
+	
+	/**
+	 * action buy CD
+	 *
+	 * @param \TYPO3\T3music\Domain\Model\Album $album
+	 * @return void
+	 */
+	public function buyCdAction(\TYPO3\T3music\Domain\Model\Album $album) {
+		$this->logger->info("buy cd action");
 	}
 }
 ?>
