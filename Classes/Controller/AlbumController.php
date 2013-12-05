@@ -74,13 +74,20 @@ class AlbumController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	}
 	
 	/**
-	 * action buy CD
+	 * action buy
 	 *
 	 * @param \TYPO3\T3music\Domain\Model\Album $album
+	 * @param \TYPO3\T3music\Domain\Model\Track $track
+	 * @param string $type
 	 * @return void
 	 */
-	public function buyCdAction(\TYPO3\T3music\Domain\Model\Album $album) {
-		$this->logger->info("buy cd action");
+	public function buyAction(\TYPO3\T3music\Domain\Model\Album $album, \TYPO3\T3music\Domain\Model\Track $track = NULL, $type) {
+		$this->logger->info ( "buy action", array (
+				'album' => $album->getTitle(),
+				'track' => $track != NULL ? $track->getNumber() : "-", 
+				'type' => $type 
+		));
+		$this->redirect('show', NULL, NULL, array('album' => $album));
 	}
 }
 ?>
