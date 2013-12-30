@@ -107,8 +107,7 @@ class AlbumController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 				'track' => $track != NULL ? $track->getNumber() : '-', 
 				'type' => $type,
 				'title' => $title,
-				'price' => $price,
-				'settings' => $this->settings
+				'price' => $price
 		));
 		
 		$product = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\T3minishop\\Domain\\Model\\Product');
