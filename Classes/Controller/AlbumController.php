@@ -82,12 +82,41 @@ class AlbumController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * @return void
 	 */
 	public function buyAction(\TYPO3\T3music\Domain\Model\Album $album, \TYPO3\T3music\Domain\Model\Track $track = NULL, $type) {
+		$albumTitle = $album->getTitle();
+		$trackTitle = $track != NULL ? $track->getTitle() : '';
+		
+		
+		$title;
+		$price;
+		switch ($type) {
+			case "album.cd":
+				$title = "Album '$albumTitle' (CD)";
+				$price = floatval(str_replace(',', '.', $this->settings['album']['cd']['price']));
+				break;
+			case "album.mp3":
+				$title = "Album '$albumTitle' (MP3s)";
+				$price = floatval(str_replace(',', '.', $this->settings['album']['mp3']['price']));
+				break;
+			case "track.mp3":
+				$title = "Album '$albumTitle', Track '$trackTitle' (MP3)";
+				$price = floatval(str_replace(',', '.', $this->settings['track']['mp3']['price']));
+				break;
+		}
 		$this->logger->info ( "buy action", array (
 				'album' => $album->getTitle(),
-				'track' => $track != NULL ? $track->getNumber() : "-", 
-				'type' => $type 
+				'track' => $track != NULL ? $track->getNumber() : '-', 
+				'type' => $type,
+				'title' => $title,
+				'price' => $price,
+				'settings' => $this->settings
 		));
+		
+		$product = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\T3minishop\\Domain\\Model\\Product');
+		$product->setTitle($title);
+		$product->setPrice($price);
+		
 		$this->redirect('show', NULL, NULL, array('album' => $album));
 	}
+	
 }
 ?>
