@@ -88,18 +88,22 @@ class AlbumController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		
 		$title;
 		$price;
+		$digital;
 		switch ($type) {
 			case "album.cd":
 				$title = "Album '$albumTitle' (CD)";
 				$price = floatval(str_replace(',', '.', $this->settings['album']['cd']['price']));
+				$digital = false;
 				break;
 			case "album.mp3":
 				$title = "Album '$albumTitle' (MP3s)";
 				$price = floatval(str_replace(',', '.', $this->settings['album']['mp3']['price']));
+				$digital = true;
 				break;
 			case "track.mp3":
 				$title = "Album '$albumTitle', Track '$trackTitle' (MP3)";
 				$price = floatval(str_replace(',', '.', $this->settings['track']['mp3']['price']));
+				$digital = true;
 				break;
 		}
 		$this->logger->info ( "buy action", array (
@@ -107,12 +111,14 @@ class AlbumController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 				'track' => $track != NULL ? $track->getNumber() : '-', 
 				'type' => $type,
 				'title' => $title,
-				'price' => $price
+				'price' => $price,
+				'digital' => $digital
 		));
 		
 		$product = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\T3minishop\\Domain\\Model\\Product');
 		$product->setTitle($title);
 		$product->setPrice($price);
+		$product->setDigital($digital);
 		
 		$orderController = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\T3minishop\\Controller\\OrderController');
 		$orderController->addProductAction($product);
