@@ -63,6 +63,20 @@ class Album extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @validate NotEmpty
 	 */
 	protected $image;
+	
+	/**
+	 * Available as CD?
+	 *
+	 * @var \boolean
+	 */
+	protected $cdAvailable;
+	
+	/**
+	 * Available per download?
+	 *
+	 * @var \boolean
+	 */
+	protected $downloadAvailable;
 
 	/**
 	 * tracks
@@ -169,6 +183,40 @@ class Album extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setImage($image) {
 		$this->image = $image;
+	}
+	
+	/**
+	 * Is the album available as CD?
+	 * 
+	 * @return boolean
+	 */
+	public function isCdAvailable() {
+		return $this->cdAvailable;
+	}
+	
+	/**
+	 * Set CD available
+	 * @param \boolean $cdAvailable
+	 */
+	public function setCdAvailable($cdAvailable) {
+		$this->cdAvailable = $cdAvailable;
+	}
+	
+	/**
+	 * Is the album available per download?
+	 * 
+	 * @return boolean
+	 */
+	public function isDownloadAvailable() {
+		return $this->downloadAvailable;
+	}
+	
+	/**
+	 * Set download available
+	 * @param \boolean $downloadAvailable
+	 */
+	public function setDownloadAvailable($downloadAvailable) {
+		$this->downloadAvailable = $downloadAvailable;
 	}
 
 	/**

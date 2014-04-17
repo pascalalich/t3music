@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_t3music_domain_model_album'] = array(
 	'ctrl' => $TCA['tx_t3music_domain_model_album']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, year, image, tracks',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, year, image, cd_available, download_available, tracks',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, description, year, image, tracks,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, description, year, image, cd_available, download_available, tracks,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -143,6 +143,20 @@ $TCA['tx_t3music_domain_model_album'] = array(
 				'size' => 1,
 				'allowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
 				'disallowed' => '',
+			),
+		),
+		'cd_available' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:t3music/Resources/Private/Language/locallang_db.xlf:tx_t3music_domain_model_album.cd_available',
+			'config' => array(
+					'type' => 'check',
+			),
+		),
+		'download_available' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:t3music/Resources/Private/Language/locallang_db.xlf:tx_t3music_domain_model_album.download_available',
+			'config' => array(
+					'type' => 'check',
 			),
 		),
 		'tracks' => array(

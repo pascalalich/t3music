@@ -19,6 +19,12 @@
 			<trans-unit id="tx_t3music_domain_model_album.image">
 				<source>Image</source>
 			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_album.cd_available">
+				<source>CD available?</source>
+			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_album.download_available">
+				<source>Dowload available?</source>
+			</trans-unit>
 			<trans-unit id="tx_t3music_domain_model_album.tracks">
 				<source>Tracks</source>
 			</trans-unit>
