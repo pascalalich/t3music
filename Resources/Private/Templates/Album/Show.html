@@ -19,7 +19,7 @@
 		</p>
 	</div>
 	<div class="album-detail-prices">
-		<f:if condition="{settings.album.cd.price}">
+		<f:if condition="{album.cdAvailable}">
 			<p class="album-price-cd-container">
 				<span class="label"><f:translate key="tx_t3music_domain_model_album.price.cd" />:&nbsp;</span><span class="album-price-cd">{settings.album.cd.price}&nbsp;&euro; <f:translate key="tx_t3music_domain_model_album.taxes" /></span>
 				<br />				
@@ -28,7 +28,7 @@
 				</f:form> 
 			</p>
 		</f:if>
-		<f:if condition="{settings.album.mp3.price}">
+		<f:if condition="{album.downloadAvailable}">
 			<p class="album-price-mp3-container">
 				<span class="label"><f:translate key="tx_t3music_domain_model_album.price.mp3" />:&nbsp;</span><span class="album-price-mp3">{settings.album.mp3.price}&nbsp;&euro; <f:translate key="tx_t3music_domain_model_album.taxes" /></span>
 				<br />				
@@ -45,7 +45,7 @@
 				<th>&nbsp;</th>
 				<th><f:translate key="tx_t3music_domain_model_track.title" /></th>
 				<th><f:translate key="tx_t3music_domain_model_track.length" /></th>
-				<f:if condition="{settings.track.mp3.price}">
+				<f:if condition="{album.downloadAvailable}">
 					<th><f:translate key="tx_t3music_domain_model_track.price" /></th>
 					<th>&nbsp;</th>
 				</f:if>
@@ -61,7 +61,7 @@
 				</td>			
 				<td>{track.number}&nbsp;{track.title}</td>			
 				<td>{track.length}</td>			
-				<f:if condition="{settings.track.mp3.price}">
+				<f:if condition="{album.downloadAvailable}">
 					<td>{settings.track.mp3.price}&nbsp;&euro;</td>			
 					<td>			
 						<f:form name="buyMP3{track.number}" method="post" controller="Album" action="buy" arguments="{album: album, track: track, type: 'track.mp3'}">
