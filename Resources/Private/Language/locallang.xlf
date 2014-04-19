@@ -33,7 +33,16 @@
 			<trans-unit id="tx_t3music_domain_model_album.taxes">
 				<source>incl. VAT</source>
 			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_album.buy.cd">
+				<source>Buy CD</source>
+			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_album.buy.mp3">
+				<source>Buy all MP3s</source>
+			</trans-unit>
 			
+			<trans-unit id="tx_t3music_domain_model_track.buy.mp3">
+				<source>Buy MP3</source>
+			</trans-unit>
 			<trans-unit id="tx_t3music_domain_model_track">
 				<source>Track</source>
 			</trans-unit>

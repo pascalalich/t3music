@@ -43,7 +43,19 @@
 				<source>incl. VAT</source>
 				<target>inkl. 19% MwSt.</target>
 			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_album.buy.cd">
+				<source>Buy CD</source>
+				<target>CD kaufen</target>
+			</trans-unit>
+			<trans-unit id="tx_t3music_domain_model_album.buy.mp3">
+				<source>Buy all MP3s</source>
+				<target>Alle MP3s kaufen</target>
+			</trans-unit>
 			
+			<trans-unit id="tx_t3music_domain_model_track.buy.mp3">
+				<source>Buy MP3</source>
+				<target>MP3 kaufen</target>
+			</trans-unit>
 			<trans-unit id="tx_t3music_domain_model_track">
 				<source>Track</source>
 				<target>Track</target>

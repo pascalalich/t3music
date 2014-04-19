@@ -24,7 +24,7 @@
 				<span class="label"><f:translate key="tx_t3music_domain_model_album.price.cd" />:&nbsp;</span><span class="album-price-cd">{settings.album.cd.price}&nbsp;&euro; <f:translate key="tx_t3music_domain_model_album.taxes" /></span>
 				<br />				
 				<f:form name="buyCD" method="post" controller="Album" action="buy" arguments="{album: album, track: null, type: 'album.cd'}">
-					<f:form.submit value="Buy CD" />
+					<f:form.submit value="{f:translate(key: 'tx_t3music_domain_model_album.buy.cd')}" />
 				</f:form> 
 			</p>
 		</f:if>
@@ -33,7 +33,7 @@
 				<span class="label"><f:translate key="tx_t3music_domain_model_album.price.mp3" />:&nbsp;</span><span class="album-price-mp3">{settings.album.mp3.price}&nbsp;&euro; <f:translate key="tx_t3music_domain_model_album.taxes" /></span>
 				<br />				
 				<f:form name="buyMP3s" method="post" controller="Album" action="buy" arguments="{album: album, track: null, type: 'album.mp3'}">
-					<f:form.submit value="Buy all MP3s" />
+					<f:form.submit value="{f:translate(key: 'tx_t3music_domain_model_album.buy.mp3')}" />
 				</f:form> 
 			</p>
 		</f:if>
@@ -65,7 +65,7 @@
 					<td>{settings.track.mp3.price}&nbsp;&euro;</td>			
 					<td>			
 						<f:form name="buyMP3{track.number}" method="post" controller="Album" action="buy" arguments="{album: album, track: track, type: 'track.mp3'}">
-							<f:form.submit value="Buy MP3" />
+							<f:form.submit value="{f:translate(key: 'tx_t3music_domain_model_track.buy.mp3')}" />
 						</f:form>
 				</td> 
 				</f:if>
