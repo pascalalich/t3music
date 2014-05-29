@@ -85,40 +85,37 @@ class AlbumController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		$albumTitle = $album->getTitle();
 		$trackTitle = $track != NULL ? $track->getTitle() : '';
 		
-		
-		$title;
-		$price;
-		$digital;
+		$product = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\T3minishop\\Domain\\Model\\Product');
 		switch ($type) {
 			case "album.cd":
-				$title = "Album '$albumTitle' (CD)";
-				$price = floatval(str_replace(',', '.', $this->settings['album']['cd']['price']));
-				$digital = false;
+				$product->setTitle("Album '$albumTitle' (CD)");
+				$product->setPrice(floatval(str_replace(',', '.', $this->settings['album']['cd']['price'])));
+				$product->setDigital(false);
 				break;
 			case "album.mp3":
-				$title = "Album '$albumTitle' (MP3s)";
-				$price = floatval(str_replace(',', '.', $this->settings['album']['mp3']['price']));
-				$digital = true;
+				$product->setTitle("Album '$albumTitle' (MP3s)");
+				$product->setPrice(floatval(str_replace(',', '.', $this->settings['album']['mp3']['price'])));
+				$product->setDigital(true);
+				$product->setFilePath($album->getFullDirectory());
 				break;
 			case "track.mp3":
-				$title = "Album '$albumTitle', Track '$trackTitle' (MP3)";
-				$price = floatval(str_replace(',', '.', $this->settings['track']['mp3']['price']));
-				$digital = true;
+				$product->setTitle($title = "Album '$albumTitle', Track '$trackTitle' (MP3)");
+				$product->setPrice(floatval(str_replace(',', '.', $this->settings['track']['mp3']['price'])));
+				$product->setDigital(true);
+				// TODO replace by full file path
+				//$product->setFilePath($track->getFullFile());
+				$product->setFilePath($track->getSampleFile());
 				break;
 		}
 		$this->logger->info ( "buy action", array (
 				'album' => $album->getTitle(),
 				'track' => $track != NULL ? $track->getNumber() : '-', 
 				'type' => $type,
-				'title' => $title,
-				'price' => $price,
-				'digital' => $digital
+				'title' => $product->getTitle(),
+				'price' => $product->getPrice(),
+				'digital' => $product->isDigital(),
+				'filePath' => $product->getFilePath()
 		));
-		
-		$product = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\T3minishop\\Domain\\Model\\Product');
-		$product->setTitle($title);
-		$product->setPrice($price);
-		$product->setDigital($digital);
 		
 		$orderController = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\T3minishop\\Controller\\OrderController');
 		$orderController->addProductAction($product);

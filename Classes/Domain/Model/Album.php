@@ -257,6 +257,27 @@ class Album extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function setTracks(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $tracks) {
 		$this->tracks = $tracks;
 	}
+	
+	/**
+	 * Assumption: all tracks' full-length files are located in the same directory
+	 * @return \string path to the album's full-length files
+	 */
+	public function getFullDirectory() {
+		$directory = '';
+		$this->tracks->rewind();
+		if ($this->tracks->valid()) {
+			$firstTrack = $this->tracks->current();
+			// TODO replace by full file path
+			//$file = $fistTrack->getFullFile();
+			$file = $fistTrack->getSampleFile();
+			if ($file != NULL) {
+				if (($lastSlash = strrpos($file, '/')) !== false) {
+					$directory = substr($file, 0, $lastSlash);
+				}
+			}
+		}
+		return $directory;
+	}
 
 }
 ?>
