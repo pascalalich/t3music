@@ -267,9 +267,7 @@ class Album extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->tracks->rewind();
 		if ($this->tracks->valid()) {
 			$firstTrack = $this->tracks->current();
-			// TODO replace by full file path
-			//$file = $firstTrack->getFullFile();
-			$file = $firstTrack->getSampleFile();
+			$file = $firstTrack->getFullFile();
 			if ($file != NULL) {
 				if (($lastSlash = strrpos($file, '/')) !== false) {
 					$directory = substr($file, 0, $lastSlash);

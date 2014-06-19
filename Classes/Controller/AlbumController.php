@@ -102,9 +102,7 @@ class AlbumController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 				$product->setTitle($title = "Album '$albumTitle', Track '$trackTitle' (MP3)");
 				$product->setPrice(floatval(str_replace(',', '.', $this->settings['track']['mp3']['price'])));
 				$product->setDigital(true);
-				// TODO replace by full file path
-				//$product->setFilePath($track->getFullFile());
-				$product->setFilePath($track->getSampleFile());
+				$product->setFilePath($track->getFullFile());
 				break;
 		}
 		$this->logger->info ( "buy action", array (
