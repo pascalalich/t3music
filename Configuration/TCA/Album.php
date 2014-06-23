@@ -166,6 +166,7 @@ $TCA['tx_t3music_domain_model_album'] = array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_t3music_domain_model_track',
 				'foreign_field' => 'album',
+				'foreign_sortby' => 'sorting',
 				'maxitems'      => 9999,
 				'appearance' => array(
 					'collapseAll' => 0,
