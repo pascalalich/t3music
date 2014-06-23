@@ -27,7 +27,6 @@ $TCA['tx_t3music_domain_model_album'] = array(
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
 		'dividers2tabs' => TRUE,
-
 		'versioningWS' => 2,
 		'versioning_followPages' => TRUE,
 		'origUid' => 't3_origuid',

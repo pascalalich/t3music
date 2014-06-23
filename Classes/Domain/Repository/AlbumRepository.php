@@ -34,5 +34,12 @@ namespace TYPO3\T3music\Domain\Repository;
  */
 class AlbumRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
+	public function findAll() {
+		$query = $this->createQuery();
+		return $query->setOrderings( array (
+				'year' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING 
+		))->execute();
+	}
+	
 }
 ?>
