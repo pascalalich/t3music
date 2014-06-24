@@ -116,8 +116,8 @@ class AlbumController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		));
 		
 		$orderController = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\T3minishop\\Controller\\OrderController');
-		$orderController->addProductAction($product);
-		
+		$orderController->addProduct($product);
+
 		$this->redirect('show', NULL, NULL, array('album' => $album));
 	}
 	
